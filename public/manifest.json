@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "short_name": "COVID-19 Stats",
+  "name": "COVID-19 Stats Chrome Extension",
+  "version": "0.1.0",
+  "description": "COVID-19 Stats: A chrome extension to show the latest COVID-19 updates.",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [],
+  "web_accessible_resources": ["js/*", "html/*", "css/*"],
+  "icons": {
+    "16": "favicon.ico",
+    "192": "logo192.png",
+    "512": "logo512.png"
+  }
+}
