@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
 
-const Settings: FC = () => (
-  <div className='ashiishme-covid-settings'>
-    <p>Settings</p>
-  </div>
-);
+const Settings: FC = () => {
+    return (
+        <div className="ashiishme-covid-settings">
+            <p>Settings</p>
+        </div>
+    );
+};
 
 export default Settings;
