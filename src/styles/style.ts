@@ -12,11 +12,16 @@ export default createGlobalStyle`
         font-family: ${(props) => props.theme.font.family.montserrat};
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        display: flex;
+        justify-content: center;
     }
 `;
 
 export const Container = styled.div`
-    width: 30%;
-    background: ${(props) => props.theme.colors.primary};
-    height: 400px;
+    width: 400px;
+    height: 500px;
+    margin-top: 4rem;
+    padding: 1rem;
+    background: ${(props) => props.theme.colors.white};
+    border: 1px solid ${(props) => props.theme.colors.dark_alpha_05};
 `;
