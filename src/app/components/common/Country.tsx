@@ -3,20 +3,17 @@ import { UpdatedStats, StatsHead, StatsDetails } from 'styles';
 import Text from './Text';
 import { useCovidCountryContext } from 'app/hooks';
 const Country: FC = () => {
-    const { Country, Date } = useCovidCountryContext();
-    console.log('Country: ', Country);
-    console.log('Country: ', Date);
-
+    const { country, date } = useCovidCountryContext();
     return (
         <div className="stats-user-country">
             <UpdatedStats className="dashboard-update-status">
                 <span className="update-status">
-                    Last updated: 05 July, 2020
+                    Last updated: {date.toUTCString()}
                 </span>
             </UpdatedStats>
             <StatsHead className="stats-head">
                 <h3>
-                    <span>Nepal</span>
+                    <span>{country[0]?.Country}</span>
                 </h3>
             </StatsHead>
             <StatsDetails className="stats-details">
@@ -28,7 +25,7 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-confirmed-count"
-                        text="15,491"
+                        text={country[0]?.TotalConfirmed}
                         allowSpan={false}
                     />
                 </div>
@@ -40,7 +37,7 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-recovered-count"
-                        text="6,415"
+                        text={country[0]?.TotalRecovered}
                         allowSpan={false}
                     />
                 </div>
@@ -52,7 +49,7 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-death-count"
-                        text="34"
+                        text={country[0]?.TotalDeaths}
                         allowSpan={false}
                     />
                 </div>

@@ -4,13 +4,13 @@ import Text from './Text';
 import { useCovidGlobalContext } from 'app/hooks';
 
 const Global: FC = () => {
-    const { Global, Date } = useCovidGlobalContext();
-
+    const { global, date } = useCovidGlobalContext();
+    console.log(global);
     return (
         <div className="stats-global">
             <UpdatedStats className="dashboard-update-status">
                 <span className="update-status">
-                    Last updated: 05 July, 2020
+                    Last updated: {date.toUTCString()}
                 </span>
             </UpdatedStats>
             <StatsHead className="stats-head">
@@ -27,7 +27,7 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-confirmed-count"
-                        text="11.1M"
+                        text={global?.TotalConfirmed}
                         allowSpan={false}
                     />
                 </div>
@@ -39,7 +39,7 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-recovered-count"
-                        text="5.89M"
+                        text={global?.TotalRecovered}
                         allowSpan={false}
                     />
                 </div>
@@ -51,7 +51,7 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-death-count"
-                        text="525K"
+                        text={global?.TotalDeaths}
                         allowSpan={false}
                     />
                 </div>

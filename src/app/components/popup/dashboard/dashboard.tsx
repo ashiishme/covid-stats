@@ -4,12 +4,14 @@ import {
     useAsyncTask,
     covidCountryContext,
     covidGlobalContext,
+    useFilterCountry,
 } from 'app/hooks';
 import Country from 'app/components/common/Country';
 import Global from 'app/components/common/Global';
 
 const Dashboard: FC = () => {
     const response = useAsyncTask('https://api.covid19api.com/summary');
+
     // chrome.i18n.getAcceptLanguages(function (list) {
     //     console.log('List: ', list);
     // });
@@ -30,15 +32,18 @@ const Dashboard: FC = () => {
     //     console.log(response.geoLocation);
     // });
 
+    let country = useFilterCountry(response?.Countries);
     const countryProvider: Covid.CountryStats = {
-        Country: response?.Countries,
-        Date: response?.Date,
+        country: country,
+        date: covid_date_format(response?.Date),
     };
 
     const globalProvider: Covid.GlobalStats = {
-        Global: response?.Global,
-        Date: response?.Date,
+        global: response?.Global,
+        date: covid_date_format(response?.Date),
     };
+
+    useFilterCountry(response?.Countries);
 
     return (
         <div className="ashiishme-covid-dashboard">
@@ -61,3 +66,7 @@ const Dashboard: FC = () => {
 };
 
 export default Dashboard;
+
+const covid_date_format = (props: Date): Date => {
+    return new Date(props);
+};
