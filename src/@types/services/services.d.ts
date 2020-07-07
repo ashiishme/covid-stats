@@ -9,7 +9,7 @@ declare module Covid {
     }
 
     interface Country {
-        CountryName: string;
+        Country: string;
         CountryCode: string;
         Slug: string;
         NewConfirmed: number;
@@ -22,7 +22,7 @@ declare module Covid {
     }
 
     interface CovidStats {
-        Global: Global[];
+        Global: Global;
         Countries: Country[];
         Date: Date;
     }
@@ -32,12 +32,12 @@ declare module Covid {
      */
 
     interface GlobalStats {
-        Global: Global[];
-        Date: Date;
+        global: Global;
+        date: Date;
     }
 
     interface CountryStats {
-        Country: Country[];
-        Date: Date;
+        country: Country[];
+        date: Date;
     }
 }
