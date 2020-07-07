@@ -1,12 +1,12 @@
 import { createContext, useContext } from 'react';
 
 export const covidGlobalContext = createContext<Covid.GlobalStats>({
-    Global: [],
-    Date: new Date(),
+    global: {} as Covid.Global,
+    date: new Date(0),
 });
 export const covidCountryContext = createContext<Covid.CountryStats>({
-    Country: [],
-    Date: new Date(0),
+    country: [],
+    date: new Date(0),
 });
 
 export const useCovidGlobalContext = () => {

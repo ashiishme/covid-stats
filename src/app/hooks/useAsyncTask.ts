@@ -3,7 +3,7 @@ import httpService from 'services/http.services';
 
 const useAsyncTask = (url: string): Covid.CovidStats => {
     const [response, setResponse] = useState<Covid.CovidStats>({
-        Global: [],
+        Global: {} as Covid.Global,
         Countries: [],
         Date: new Date(),
     });
