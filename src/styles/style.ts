@@ -20,8 +20,6 @@ export default createGlobalStyle`
 export const Container = styled.div`
     width: 400px;
     height: 500px;
-    margin-top: 4rem;
     padding: 1rem;
     background: ${(props) => props.theme.colors.white};
-    border: 1px solid ${(props) => props.theme.colors.dark_alpha_05};
 `;
