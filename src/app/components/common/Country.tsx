@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { UpdatedStats, StatsHead, StatsDetails } from 'styles';
 import Text from './Text';
 import { useCovidCountryContext } from 'app/hooks';
+import * as utils from 'app/utils';
 const Country: FC = () => {
     const { country, date } = useCovidCountryContext();
     return (
@@ -25,7 +26,9 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-confirmed-count"
-                        text={country[0]?.TotalConfirmed}
+                        text={utils.statsAbbreviation(
+                            country[0]?.TotalConfirmed
+                        )}
                         allowSpan={false}
                     />
                 </div>
@@ -37,7 +40,9 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-recovered-count"
-                        text={country[0]?.TotalRecovered}
+                        text={utils.statsAbbreviation(
+                            country[0]?.TotalRecovered
+                        )}
                         allowSpan={false}
                     />
                 </div>
@@ -49,7 +54,7 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-death-count"
-                        text={country[0]?.TotalDeaths}
+                        text={utils.statsAbbreviation(country[0]?.TotalDeaths)}
                         allowSpan={false}
                     />
                 </div>

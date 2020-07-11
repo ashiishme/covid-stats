@@ -4,8 +4,8 @@ import {
     useAsyncTask,
     covidCountryContext,
     covidGlobalContext,
-    useFilterCountry,
 } from 'app/hooks';
+import * as utils from 'app/utils/';
 import Country from 'app/components/common/Country';
 import Global from 'app/components/common/Global';
 
@@ -32,7 +32,7 @@ const Dashboard: FC = () => {
     //     console.log(response.geoLocation);
     // });
 
-    let country = useFilterCountry(response?.Countries);
+    let country = utils.filterCountry(response?.Countries);
     const countryProvider: Covid.CountryStats = {
         country: country,
         date: covid_date_format(response?.Date),
@@ -42,8 +42,6 @@ const Dashboard: FC = () => {
         global: response?.Global,
         date: covid_date_format(response?.Date),
     };
-
-    useFilterCountry(response?.Countries);
 
     return (
         <div className="ashiishme-covid-dashboard">

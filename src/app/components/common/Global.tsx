@@ -2,10 +2,11 @@ import React, { FC } from 'react';
 import { UpdatedStats, StatsHead, StatsDetails } from 'styles';
 import Text from './Text';
 import { useCovidGlobalContext } from 'app/hooks';
+import * as utils from 'app/utils';
 
 const Global: FC = () => {
     const { global, date } = useCovidGlobalContext();
-    console.log(global);
+
     return (
         <div className="stats-global">
             <UpdatedStats className="dashboard-update-status">
@@ -27,7 +28,7 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-confirmed-count"
-                        text={global?.TotalConfirmed}
+                        text={utils.statsAbbreviation(global?.TotalConfirmed)}
                         allowSpan={false}
                     />
                 </div>
@@ -39,7 +40,7 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-recovered-count"
-                        text={global?.TotalRecovered}
+                        text={utils.statsAbbreviation(global?.TotalRecovered)}
                         allowSpan={false}
                     />
                 </div>
@@ -51,7 +52,7 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-death-count"
-                        text={global?.TotalDeaths}
+                        text={utils.statsAbbreviation(global?.TotalDeaths)}
                         allowSpan={false}
                     />
                 </div>
