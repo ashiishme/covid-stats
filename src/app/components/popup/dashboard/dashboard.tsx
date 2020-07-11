@@ -12,26 +12,6 @@ import Global from 'app/components/common/Global';
 const Dashboard: FC = () => {
     const response = useAsyncTask('https://api.covid19api.com/summary');
 
-    // chrome.i18n.getAcceptLanguages(function (list) {
-    //     console.log('List: ', list);
-    // });
-
-    // if (!navigator.geolocation) {
-    //     console.log('TEgeo');
-    //     ///navigator.geolocation.getCurrentPosition(hello_there);
-    // }
-
-    // const hello_there = (position: {
-    //     coords: { latitude: any; longitude: any };
-    // }) => {
-    //     console.log('Lat: ', position.coords.latitude);
-    //     console.log('Lon: ', position.coords.longitude);
-    // };
-
-    // chrome.runtime.sendMessage({ command: 'gimmeGimme' }, function (response) {
-    //     console.log(response.geoLocation);
-    // });
-
     let country = utils.filterCountry(response?.Countries);
     const countryProvider: Covid.CountryStats = {
         country: country,
