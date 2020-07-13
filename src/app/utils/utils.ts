@@ -7,14 +7,15 @@ export const statsAbbreviation = (props: number): string => {
     return props.toString();
 };
 
-let code: string = 'NP';
-
-export const filterCountry = (props: Covid.Country[]): Covid.Country[] => {
-    let length: number = props.length;
+export const filterCountry = (
+    countries: Covid.Country[],
+    country_code: string
+): Covid.Country[] => {
+    let length: number = countries.length;
     let country: Covid.Country[] = [];
     while (length--) {
-        if (props[length].CountryCode === code) {
-            country.push(props[length]);
+        if (countries[length].CountryCode === country_code) {
+            country.push(countries[length]);
         }
     }
 
