@@ -11,13 +11,13 @@ export const filterCountry = (
     countries: Covid.Country[],
     country_code: string
 ): Covid.Country[] => {
-    let length: number = countries.length;
     let country: Covid.Country[] = [];
+    if (!countries) return [];
+    let length: number = countries.length;
     while (length--) {
         if (countries[length].CountryCode === country_code) {
             country.push(countries[length]);
         }
     }
-
     return country;
 };

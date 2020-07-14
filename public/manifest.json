@@ -9,10 +9,6 @@
     },
     "permissions": ["geolocation"],
     "content_scripts": [],
-    "background": {
-        "scripts": ["./services/background.js"],
-        "persistent": false
-    },
     "web_accessible_resources": ["js/*", "html/*", "css/*"],
     "icons": {
         "16": "favicon.ico",
