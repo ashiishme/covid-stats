@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./public/images/icon128.png" align="center" alt="ashiish-covid-stats-icon"/>
+    <img src="./public/images/icon128.png" align="center" alt="ashiish-covid-stats-icon" width="80px" height="80px"/>
 
 <h1 align="center" style="border: 0;"> COVID-19 Stats </h1>
 
