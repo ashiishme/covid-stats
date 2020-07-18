@@ -9,6 +9,10 @@
 
 COVID-19 Stats shows the current pandemic data based on user location as well as the global statistics. If you are tired of visiting different website to check the data, you can easily access it now from your browser with single click.
 
+## Download
+
+Current version is available at [Chrome web store](https://chrome.google.com/webstore/detail/covid-19-stats-chrome-ext/dbjnfmlhffkhglklgibidgmklelnnlcn).
+
 ## Screenshot
 
 ![covid-stats-screenshot](https://repository-images.githubusercontent.com/274438498/99045180-c6ec-11ea-943a-ac294b0fbc1f)
