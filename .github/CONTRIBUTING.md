@@ -7,7 +7,7 @@ If you want to contribute, you must read and accept our Code of Conduct.
 # Guidelines
 
 ## General
-- The `development` branch is used for base branch. Please don't get confused for `master`, it's `development`.
+- The `master` branch is used for base branch.
 - Open one PR for the same feature / fix / changes. Please don't open multiple PR if you want to commit some small changes later. One PR helps to review all changes easily.
 
 ## Hacktoberfest 2020
