@@ -28,7 +28,10 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-confirmed-count"
-                        text={utils.statsAbbreviation(global?.TotalConfirmed)}
+                        text={
+                            utils.statsAbbreviation(global?.TotalConfirmed) ||
+                            'N/A'
+                        }
                         allowSpan={false}
                     />
                 </div>
@@ -40,7 +43,10 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-recovered-count"
-                        text={utils.statsAbbreviation(global?.TotalRecovered)}
+                        text={
+                            utils.statsAbbreviation(global?.TotalRecovered) ||
+                            'N/A'
+                        }
                         allowSpan={false}
                     />
                 </div>
@@ -52,7 +58,10 @@ const Global: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-death-count"
-                        text={utils.statsAbbreviation(global?.TotalDeaths)}
+                        text={
+                            utils.statsAbbreviation(global?.TotalDeaths) ||
+                            'N/A'
+                        }
                         allowSpan={false}
                     />
                 </div>

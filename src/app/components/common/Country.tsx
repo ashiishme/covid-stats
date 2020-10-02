@@ -14,7 +14,7 @@ const Country: FC = () => {
             </UpdatedStats>
             <StatsHead className="stats-head">
                 <h3>
-                    <span>{country[0]?.Country}</span>
+                    <span>{country[0]?.Country || 'N/A'}</span>
                 </h3>
             </StatsHead>
             <StatsDetails className="stats-details">
@@ -26,9 +26,11 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-confirmed-count"
-                        text={utils.statsAbbreviation(
-                            country[0]?.TotalConfirmed
-                        )}
+                        text={
+                            utils.statsAbbreviation(
+                                country[0]?.TotalConfirmed
+                            ) || 'N/A'
+                        }
                         allowSpan={false}
                     />
                 </div>
@@ -40,9 +42,11 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-recovered-count"
-                        text={utils.statsAbbreviation(
-                            country[0]?.TotalRecovered
-                        )}
+                        text={
+                            utils.statsAbbreviation(
+                                country[0]?.TotalRecovered
+                            ) || 'N/A'
+                        }
                         allowSpan={false}
                     />
                 </div>
@@ -54,7 +58,10 @@ const Country: FC = () => {
                     />
                     <Text
                         textClass="stats-count stats-death-count"
-                        text={utils.statsAbbreviation(country[0]?.TotalDeaths)}
+                        text={
+                            utils.statsAbbreviation(country[0]?.TotalDeaths) ||
+                            'N/A'
+                        }
                         allowSpan={false}
                     />
                 </div>
