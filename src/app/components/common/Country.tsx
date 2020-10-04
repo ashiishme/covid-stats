@@ -14,7 +14,7 @@ const Country: FC = () => {
             </UpdatedStats>
             <StatsHead className="stats-head">
                 <h3>
-                    <span>{country[0]?.Country || 'N/A'}</span>
+                    <span>{country[0]?.Country}</span>
                 </h3>
             </StatsHead>
             <StatsDetails className="stats-details">
@@ -30,7 +30,7 @@ const Country: FC = () => {
                             text={
                                 utils.statsAbbreviation(
                                     country[0]?.TotalConfirmed
-                                ) || 'N/A'
+                                )
                             }
                             allowSpan={false}
                         />
@@ -50,7 +50,7 @@ const Country: FC = () => {
                             text={
                                 utils.statsAbbreviation(
                                     country[0]?.TotalRecovered
-                                ) || 'N/A'
+                                )
                             }
                             allowSpan={false}
                         />
@@ -70,7 +70,7 @@ const Country: FC = () => {
                             text={
                                 utils.statsAbbreviation(
                                     country[0]?.TotalDeaths
-                                ) || 'N/A'
+                                )
                             }
                             allowSpan={false}
                         />
