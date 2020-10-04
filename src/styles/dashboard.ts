@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const DashboardHead = styled.div`
     margin-bottom: 1rem;
@@ -50,3 +50,24 @@ export const StatsDetails = styled.div`
         }
     }
 `;
+
+const spin = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`
+
+export const LoadingIndicator = styled.div`
+    &&& {
+        width: 1rem; 
+        height: 1rem; 
+        border: 0.2rem solid black;
+        margin: auto;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        animation: ${spin} infinite 1s linear;
+    }
+`

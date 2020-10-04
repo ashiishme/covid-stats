@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { UpdatedStats, StatsHead, StatsDetails } from 'styles';
+import { UpdatedStats, StatsHead, StatsDetails, LoadingIndicator } from 'styles';
 import Text from './Text';
 import { useCovidCountryContext } from 'app/hooks';
 import * as utils from 'app/utils';
@@ -24,15 +24,19 @@ const Country: FC = () => {
                         text="confirmed"
                         allowSpan={true}
                     />
-                    <Text
-                        textClass="stats-count stats-confirmed-count"
-                        text={
-                            utils.statsAbbreviation(
-                                country[0]?.TotalConfirmed
-                            ) || 'N/A'
-                        }
-                        allowSpan={false}
-                    />
+                    {country[0]?.TotalConfirmed ? (
+                        <Text
+                            textClass="stats-count stats-confirmed-count"
+                            text={
+                                utils.statsAbbreviation(
+                                    country[0]?.TotalConfirmed
+                                ) || 'N/A'
+                            }
+                            allowSpan={false}
+                        />
+                    ) : (
+                        <LoadingIndicator />
+                    )}
                 </div>
                 <div className="stats-recovered">
                     <Text
@@ -40,15 +44,19 @@ const Country: FC = () => {
                         text="recovered"
                         allowSpan={true}
                     />
-                    <Text
-                        textClass="stats-count stats-recovered-count"
-                        text={
-                            utils.statsAbbreviation(
-                                country[0]?.TotalRecovered
-                            ) || 'N/A'
-                        }
-                        allowSpan={false}
-                    />
+                    {country[0]?.TotalRecovered ? (
+                        <Text
+                            textClass="stats-count stats-recovered-count"
+                            text={
+                                utils.statsAbbreviation(
+                                    country[0]?.TotalRecovered
+                                ) || 'N/A'
+                            }
+                            allowSpan={false}
+                        />
+                    ) : (
+                        <LoadingIndicator />
+                    )}
                 </div>
                 <div className="stats-death">
                     <Text
@@ -56,14 +64,19 @@ const Country: FC = () => {
                         text="death"
                         allowSpan={true}
                     />
-                    <Text
-                        textClass="stats-count stats-death-count"
-                        text={
-                            utils.statsAbbreviation(country[0]?.TotalDeaths) ||
-                            'N/A'
-                        }
-                        allowSpan={false}
-                    />
+                    {country[0]?.TotalDeaths ? (
+                        <Text
+                            textClass="stats-count stats-death-count"
+                            text={
+                                utils.statsAbbreviation(
+                                    country[0]?.TotalDeaths
+                                ) || 'N/A'
+                            }
+                            allowSpan={false}
+                        />
+                    ) : (
+                        <LoadingIndicator />
+                    )}
                 </div>
             </StatsDetails>
         </div>
