@@ -6,4 +6,5 @@ export {
     UpdatedStats,
     StatsHead,
     StatsDetails,
+    LoadingIndicator,
 } from './dashboard';
