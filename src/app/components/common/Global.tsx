@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { UpdatedStats, StatsHead, StatsDetails } from 'styles';
+import { UpdatedStats, StatsHead, StatsDetails, LoadingIndicator } from 'styles';
 import Text from './Text';
 import { useCovidGlobalContext } from 'app/hooks';
 import * as utils from 'app/utils';
@@ -26,14 +26,17 @@ const Global: FC = () => {
                         text="confirmed"
                         allowSpan={true}
                     />
-                    <Text
-                        textClass="stats-count stats-confirmed-count"
-                        text={
-                            utils.statsAbbreviation(global?.TotalConfirmed) ||
-                            'N/A'
-                        }
-                        allowSpan={false}
-                    />
+                    {global?.TotalConfirmed ? (
+                        <Text
+                            textClass="stats-count stats-confirmed-count"
+                            text={utils.statsAbbreviation(
+                                global?.TotalConfirmed
+                            )}
+                            allowSpan={false}
+                        />
+                    ) : (
+                        <LoadingIndicator />
+                    )}
                 </div>
                 <div className="stats-recovered">
                     <Text
@@ -41,14 +44,17 @@ const Global: FC = () => {
                         text="recovered"
                         allowSpan={true}
                     />
-                    <Text
-                        textClass="stats-count stats-recovered-count"
-                        text={
-                            utils.statsAbbreviation(global?.TotalRecovered) ||
-                            'N/A'
-                        }
-                        allowSpan={false}
-                    />
+                    {global?.TotalRecovered ? (
+                        <Text
+                            textClass="stats-count stats-recovered-count"
+                            text={utils.statsAbbreviation(
+                                global?.TotalRecovered
+                            )}
+                            allowSpan={false}
+                        />
+                    ) : (
+                        <LoadingIndicator />
+                    )}
                 </div>
                 <div className="stats-death">
                     <Text
@@ -56,14 +62,15 @@ const Global: FC = () => {
                         text="death"
                         allowSpan={true}
                     />
-                    <Text
-                        textClass="stats-count stats-death-count"
-                        text={
-                            utils.statsAbbreviation(global?.TotalDeaths) ||
-                            'N/A'
-                        }
-                        allowSpan={false}
-                    />
+                    {global?.TotalDeaths ? (
+                        <Text
+                            textClass="stats-count stats-death-count"
+                            text={utils.statsAbbreviation(global?.TotalDeaths)}
+                            allowSpan={false}
+                        />
+                    ) : (
+                        <LoadingIndicator />
+                    )}
                 </div>
             </StatsDetails>
         </div>
